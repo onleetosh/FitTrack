@@ -1,4 +1,4 @@
-package com.example.fittrack.ui.theme
+package com.onleetosh.fittrack.ui.theme
 
 import android.app.Activity
 import android.os.Build

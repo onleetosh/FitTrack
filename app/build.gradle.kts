@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.fittrack"
+    namespace = "com.onleetosh.fittrack"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.example.fittrack"
+        applicationId = "com.onleetosh.fittrack"
         minSdk = 24
         targetSdk = 37
         versionCode = 1

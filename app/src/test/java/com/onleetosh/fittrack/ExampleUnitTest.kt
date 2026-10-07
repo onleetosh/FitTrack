@@ -1,4 +1,4 @@
-package com.example.fittrack
+package com.onleetosh.fittrack
 
 import org.junit.Test
 

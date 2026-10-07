@@ -1,4 +1,4 @@
-package com.example.fittrack
+package com.onleetosh.fittrack
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
