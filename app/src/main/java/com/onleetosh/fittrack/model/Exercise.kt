@@ -186,7 +186,7 @@ val exercisesByCategory = mapOf(
             "A foundational standing yoga posture that builds lower-body strength, stability, and focus",
             listOf("Start standing at the front of your mat with your feet together and arms at your sides.",
                 "Step your left foot back about 3 to 4 feet and spin your back heel down to the mat at a 45-degree angle.",
-                "Bend your front knee toat a 90-degree angle, keeping your knee directly over your ankle.",
+                "Bend your front knees to a 90-degree angle, keeping your knee directly over your ankle.",
                 "Square your hips toward the front of the mat and engage your core.",
                 "Lift your arms overhead, keeping your shoulders relaxed and away from your ears."),
             3),
