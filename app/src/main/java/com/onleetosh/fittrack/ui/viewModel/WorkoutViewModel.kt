@@ -13,7 +13,7 @@ import com.onleetosh.fittrack.model.Workout
  * It holds the current UI state and provides methods to update it.
  */
 data class WorkoutUiState (
-    val logActive: List<Workout> = emptyList(),
+    val logActivity: List<Workout> = emptyList(),
     val durationInput: String = "",
     val isLogged: Boolean = false
 )
@@ -60,7 +60,7 @@ class WorkoutViewModel: ViewModel() {
         )
         // Update the UI state after logging the workout
         uiState = uiState.copy(
-            logActive = listOf(work) + uiState.logActive,
+            logActivity = listOf(work) + uiState.logActivity,
             durationInput = "",
             isLogged = true
         )
