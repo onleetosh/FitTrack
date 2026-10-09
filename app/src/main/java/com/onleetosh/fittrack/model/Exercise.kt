@@ -8,8 +8,8 @@ package com.onleetosh.fittrack.model
  * @property name Display name of the exercise.
  * @property difficulty Difficulty level of the exercise.
  * @property description Brief summary of the exercise .
- * @property instruct Ordered list of detailed steps for performing the exercise.
- * @property trainingLength Recommended duration of the exercise in seconds.
+ * @property steps Ordered list of detailed steps for performing the exercise.
+ * @property recommendedDuration Recommended duration of the exercise in seconds.
  */
 data class Exercise(
     val id: String,
@@ -17,8 +17,8 @@ data class Exercise(
     val name: String,
     val difficulty: Difficulty,
     val description: String,
-    val instruct: List<String>,
-    val trainingLength: Int
+    val steps: List<String>,
+    val recommendedDuration: Int
 )
 
 /**
@@ -251,5 +251,5 @@ val exercisesByCategory = mapOf(
  * @return The exercise with the specified ID, or null if not found.
  */
 fun exerciseById(id: String) {
-    exercisesByCategory.values.flatten().firstOrNull() { it.id == id}
+    exercisesByCategory.values.flatten().firstOrNull { it.id == id}
 }
