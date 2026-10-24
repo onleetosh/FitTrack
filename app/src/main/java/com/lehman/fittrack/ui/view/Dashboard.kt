@@ -66,7 +66,7 @@ private fun SummaryCardHeader() {
 @Composable
 private fun SummaryCard(count: Int, inMinutes: Long){
     Card(
-        modifier = Modifier.fillMaxWidth().padding(16.dp),
+        modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,
             contentColor = MaterialTheme.colorScheme.onPrimaryContainer
@@ -135,7 +135,7 @@ private fun RecentActivityLogHeader(logStatus: Boolean, onClear: () -> Unit){
 @Composable
 private fun RecentActivityLogCard(workout: Workout){
     Card(
-        modifier = Modifier.fillMaxWidth().padding(16.dp),
+        modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
             containerColor = Color.LightGray,
             contentColor = Color.Black
