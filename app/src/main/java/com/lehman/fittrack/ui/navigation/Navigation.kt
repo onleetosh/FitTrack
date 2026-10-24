@@ -24,9 +24,9 @@ private fun NavGraphBuilder.navigateDashboard(navCtrl: NavHostController, viewMo
     composable(View.Dashboard.path) {
         Dashboard(
             workouts = viewMod.uiState.logActivity,
-            onCategorySelected =  { category ->
+            onCategorySelected = { category ->
                 navCtrl.navigate("${View.ExerciseList.path}/$category")
-            },
+                },
             onClear = viewMod::clearLoggedActivity
         )
     }
@@ -66,7 +66,7 @@ private fun ExerciseListPath(entry: NavBackStackEntry, navCtrl: NavHostControlle
     ExerciseList(
         category = entry.arguments?.getString(View.CATEGORY).orEmpty(),
         exerciseSelected = { exerciseId ->
-            navCtrl.navigate("${View.ExerciseList.path}/$exerciseId")
+            navCtrl.navigate("${View.WorkoutDetail.path}/$exerciseId")
         },
         onBack = {
             navCtrl.popBackStack(View.Dashboard.path, inclusive = false)
