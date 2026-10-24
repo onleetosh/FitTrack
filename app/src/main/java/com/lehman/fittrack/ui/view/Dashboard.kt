@@ -7,8 +7,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.*
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.*
 import androidx.compose.ui.unit.*
+import com.lehman.fittrack.R
 import com.lehman.fittrack.model.Workout
 import java.util.*
 
@@ -23,7 +25,7 @@ fun Dashboard(workouts: List<Workout>,
 {
    Scaffold(topBar = {
            TopAppBar(
-               title = {Text("Fit Track", fontSize = 36.sp)},
+               title = {Text(stringResource(R.string.app_name), fontSize = 36.sp)},
                colors = TopAppBarDefaults.topAppBarColors(
                    containerColor = MaterialTheme.colorScheme.primaryContainer,
                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
@@ -55,7 +57,7 @@ fun Dashboard(workouts: List<Workout>,
 
 @Composable
 private fun SummaryCardHeader() {
-    Text("Summary of logged metrics",
+    Text(stringResource(R.string.metrics),
         style = MaterialTheme.typography.titleLarge,
         color = MaterialTheme.colorScheme.primary,
         fontSize = 30.sp,
@@ -76,8 +78,8 @@ private fun SummaryCard(count: Int, inMinutes: Long){
             modifier = Modifier.fillMaxWidth().padding(20.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            SummaryField("Workouts", count.toString())
-            SummaryField("Minutes", inMinutes.toString())
+            SummaryField(stringResource(R.string.work_1), count.toString())
+            SummaryField(stringResource(R.string.mins), inMinutes.toString())
         }
     }
 }
@@ -91,7 +93,7 @@ private fun SummaryField(field: String, value: String) {
 
 @Composable
 private fun CategoryHeader() {
-    Text("Categories",
+    Text(stringResource(R.string.categories),
         style = MaterialTheme.typography.titleLarge,
         color = MaterialTheme.colorScheme.secondary,
         fontSize = 30.sp)
@@ -120,13 +122,13 @@ private fun RecentActivityLogHeader(logStatus: Boolean, onClear: () -> Unit){
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            "Activity Log",
+            stringResource(R.string.activity_log),
             style = MaterialTheme.typography.titleLarge,
             color = MaterialTheme.colorScheme.secondary,
             fontSize = 30.sp
         )
         Button(onClick = onClear, enabled = !logStatus) {
-            Text("Clear", fontSize = 22.sp)
+            Text(stringResource(R.string.clear), fontSize = 22.sp)
 
         }
     }
@@ -158,7 +160,7 @@ private fun RecentActivityLogCard(workout: Workout){
                     contentColor = MaterialTheme.colorScheme.onPrimaryContainer
                 ) {
                     Text(
-                        "${workout.durationMinutes} min",
+                        "${workout.durationMinutes} ${stringResource(R.string.min)}",
                         modifier = Modifier.padding(horizontal = 10.dp, vertical = 10.dp),
                         style = MaterialTheme.typography.labelLarge,
                         fontSize = 20.sp
@@ -167,8 +169,8 @@ private fun RecentActivityLogCard(workout: Workout){
             }
             Text(workout.category, style = MaterialTheme.typography.bodyMedium, fontSize = 24.sp)
             Text(
-                "Completed ${
-                    SimpleDateFormat("MMM d, yyyy h:mm a", Locale.getDefault())
+                "${stringResource(R.string.completed)} ${
+                    SimpleDateFormat(stringResource(R.string.date_ftm), Locale.getDefault())
                         .format(Date(workout.date))
                 }",
                 style = MaterialTheme.typography.bodySmall, fontSize = 20.sp
@@ -188,7 +190,7 @@ private fun EmptyActivityActivity(){
         )
     ) {
         Text(
-            "*** No workouts logged yet *** ",
+            stringResource(R.string.empty_msg),
             modifier = Modifier.fillMaxWidth().padding(16.dp),
             style = MaterialTheme.typography.bodyMedium,
             fontSize = 20.sp,

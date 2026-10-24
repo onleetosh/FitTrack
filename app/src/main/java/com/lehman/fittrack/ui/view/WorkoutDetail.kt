@@ -4,7 +4,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.*
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.*
+import com.lehman.fittrack.R
 import com.lehman.fittrack.model.Exercise
 import com.lehman.fittrack.ui.icon.arrow_circle_left
 
@@ -52,7 +54,9 @@ private fun WorkoutDetailTopBar(title: String, onBack: () -> Unit) {
         title = {Text(title, fontSize = 30.sp)},
         navigationIcon = {
             IconButton(onClick = onBack) {
-                Icon(imageVector = arrow_circle_left, contentDescription = "Back to exercise list")
+                Icon(imageVector = arrow_circle_left,
+                    contentDescription = stringResource(R.string.back_dash_2)
+                )
             }
         }
     )
@@ -60,8 +64,9 @@ private fun WorkoutDetailTopBar(title: String, onBack: () -> Unit) {
 
 @Composable
 private fun WorkoutInformation(exercise: Exercise) {
-    Text("Recommended duration: ${exercise.recommendedDuration} minutes", fontSize = 22.sp)
-    Text("Instructions", style = MaterialTheme.typography.titleMedium, fontSize = 24.sp)
+    Text("${stringResource(R.string.recommended)} ${exercise.recommendedDuration} ${stringResource(R.string.min)}",
+        fontSize = 22.sp)
+    Text(stringResource(R.string.instructs), style = MaterialTheme.typography.titleMedium, fontSize = 24.sp)
     exercise.instructions.forEachIndexed { index, string ->
         Text("${index + 1}.$string", fontSize = 20.sp)
     }
@@ -72,12 +77,12 @@ private fun DurationInput(value: String, isInvalid: Boolean, onValueChange: (Str
     OutlinedTextField(
         value = value,
         onValueChange = onValueChange,
-        label = { Text("Duration (minutes)", fontSize = 20.sp) },
+        label = { Text(stringResource(R.string.durationMin), fontSize = 20.sp) },
         isError = isInvalid,
         singleLine = true,
         supportingText = {
             if(isInvalid) {
-                Text("Enter a number greater than zero",
+                Text(stringResource(R.string.prompt_input),
                     fontSize = 20.sp,
                     color = MaterialTheme.colorScheme.error)
             }
@@ -93,7 +98,7 @@ private fun LogActivityButton(isEnabled: Boolean, onClick:() -> Unit) {
         enabled = isEnabled,
         modifier = Modifier.fillMaxWidth()
     ) {
-        Text("Log Completed Workout", fontSize = 22.sp)
+        Text(stringResource(R.string.log_complete), fontSize = 22.sp)
     }
 }
 
@@ -101,8 +106,8 @@ private fun LogActivityButton(isEnabled: Boolean, onClick:() -> Unit) {
 private fun ActivityLogDialog(activity: String, onDismiss: () -> Unit) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text("Workout Logged", fontSize = 26.sp) },
-        text = { Text ("$activity was added to activity history", fontSize = 22.sp )},
+        title = { Text(stringResource(R.string.log_work), fontSize = 26.sp) },
+        text = { Text ("$activity ${stringResource(R.string.log_dialog)}", fontSize = 22.sp )},
         confirmButton = {
             TextButton(onClick = onDismiss) {
                 Text("Done", fontSize = 22.sp)

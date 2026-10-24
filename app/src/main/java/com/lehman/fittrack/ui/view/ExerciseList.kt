@@ -7,7 +7,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.*
+import com.lehman.fittrack.R
 import com.lehman.fittrack.model.*
 import com.lehman.fittrack.ui.icon.arrow_circle_left
 import com.lehman.fittrack.ui.theme.*
@@ -42,7 +44,9 @@ private fun ExerciseListTopBar(category: String, onBack: () -> Unit) {
         title = { Text(category, fontSize = 30.sp) },
         navigationIcon = {
             IconButton(onClick = onBack) {
-                Icon(imageVector = arrow_circle_left, contentDescription = "Back to Dashboard")
+                Icon(imageVector = arrow_circle_left,
+                    contentDescription = stringResource(R.string.back_dash_1)
+                )
             }
         }
     )

@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">FitTrack</string>
+    <string name="app_name">Fit Track</string>
+    <string name="metrics">Summary of logged metrics</string>
+    <string name="work_1">Workouts</string>
+    <string name="work_2">workout-</string>
+    <string name="mins">Minutes</string>
+    <string name="categories">Categories</string>
+    <string name="activity_log">Activity Log </string>
+    <string name="clear">Clear </string>
+    <string name="min">mins</string>
+    <string name="completed">Completed</string>
+    <string name="date_ftm">MMM d, yyyy h:mm a</string>
+    <string name="empty_msg">--- No workouts logged yet ---</string>
+    <string name="cardio">Cardio</string>
+    <string name="strength">Strength </string>
+    <string name="flex">Flexibility</string>
+    <string name="balance">Balance</string>
+    <string name="back_dash_1">Back to Dashboard</string>
+    <string name="back_dash_2">Back to Exercise List</string>
+    <string name="prompt_input">Enter a number greater than zero</string>
+    <string name="durationMin">Duration (minutes)</string>
+    <string name="log_complete">Log Completed Workout</string>
+    <string name="log_work">Workout Logged</string>
+    <string name="log_dialog">was added to activity history</string>
+    <string name="instructs">Instructions</string>
+    <string name="recommended">Recommended duration:</string>
 </resources>

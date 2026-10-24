@@ -19,7 +19,6 @@ val exercisesByCategory = mapOf(
             Difficulty.Novice,
             "Stand upright with feet hip-width apart.",
             listOf( "Stand upright with feet hip-width apart",
-                "Lift right knee to hip level while swinging left arm forward",
                 "Lift right knee to hip level while swinging left arm forward.",
                 "Lower right leg and repeat with the left leg."),
             10
