@@ -7,7 +7,7 @@ import com.lehman.fittrack.model.*
 data class WorkoutUiState(
     val logActivity: List<Workout> = emptyList(),
     val durationInput: String = "",
-    val isLogged: Boolean = false
+    val logState: Boolean = false
 )
 
 class WorkoutViewModel: ViewModel() {
@@ -21,7 +21,6 @@ class WorkoutViewModel: ViewModel() {
 
     fun logWorkout(exercise: Exercise) {
         val duration = uiState.durationInput.toLongOrNull() ?: return
-
         if(duration <= 0) return
 
         val work = Workout(
@@ -35,17 +34,15 @@ class WorkoutViewModel: ViewModel() {
         uiState = uiState.copy(
             logActivity = listOf(work) + uiState.logActivity,
             durationInput = "",
-            isLogged = true
+            logState = true
         )
     }
 
     fun isLoggedDismiss(){
-        uiState = uiState.copy( isLogged = false )
+        uiState = uiState.copy( logState = false )
     }
 
     fun clearLoggedActivity(){
         uiState = WorkoutUiState()
     }
-
-
 }
