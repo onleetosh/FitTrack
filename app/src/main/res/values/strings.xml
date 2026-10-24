@@ -7,7 +7,7 @@
     <string name="categories">Categories</string>
     <string name="activity_log">Activity Log </string>
     <string name="clear">Clear </string>
-    <string name="min">mins</string>
+    <string name="min">min</string>
     <string name="completed">Completed</string>
     <string name="date_ftm">MMM d, yyyy h:mm a</string>
     <string name="empty_msg">--- No workouts logged yet ---</string>
