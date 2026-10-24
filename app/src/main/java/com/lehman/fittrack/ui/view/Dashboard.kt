@@ -127,7 +127,7 @@ private fun RecentActivityLogHeader(logStatus: Boolean, onClear: () -> Unit){
             color = MaterialTheme.colorScheme.secondary,
             fontSize = 30.sp
         )
-        Button(onClick = onClear, enabled = !logStatus) {
+        Button(onClick = onClear, enabled = logStatus) {
             Text(stringResource(R.string.clear), fontSize = 22.sp)
 
         }
